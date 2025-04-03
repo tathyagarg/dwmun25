@@ -35,6 +35,20 @@
 {@render children()}
 
 <style>
+  @font-face {
+    font-family: "Kuchek";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/Kuchek.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "JuliusSans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/JuliusSansOne.ttf") format("truetype");
+  }
+
   :global(:root) {
     --bg1: #141f14;
     --bg2: #1a241a;
@@ -48,6 +62,14 @@
   :global(body) {
     background-color: var(--bg1);
     color: var(--text);
+
+    height: 100vh;
+    width: 100vw;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "JuliusSans";
   }
 
   :global(a:not(.default)) {
@@ -81,7 +103,7 @@
   }
 
   #right {
-    padding: 1.5em 0 0 1em;
+    padding: 1em 0 0 1em;
     width: fit-content;
 
     width: 7em;
@@ -109,20 +131,16 @@
   }
 
   #links {
-    opacity: 0;
-    display: flex !important;
-    flex-direction: column !important;
+    display: flex;
+    flex-direction: column;
     transform: translateX(-10em);
     transition: transform 0.2s;
-    visibility: hidden;
 
     width: 7em;
   }
 
   #links.visible {
-    opacity: 1 !important;
-    transform: translateX(0) !important;
-    visibility: visible !important;
+    transform: translateX(0);
     transition: transform 0.2s;
   }
 </style>
