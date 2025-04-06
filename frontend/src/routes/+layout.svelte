@@ -93,13 +93,13 @@
 
   #links a {
     text-align: left;
-    padding: 0.5em 1em;
+    padding: 0.5em 0;
     font-size: 1.2em;
   }
 
   #links hr {
     border-top: 1px solid var(--text);
-    margin: 1em;
+    margin: 1em 0;
   }
 
   #right {
@@ -138,7 +138,7 @@
   }
 
   #links.visible {
-    transform: translateX(0);
+    transform: translateX(2.5em);
     transition: transform 0.2s;
   }
 
