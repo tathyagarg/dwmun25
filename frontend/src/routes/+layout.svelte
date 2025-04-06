@@ -105,8 +105,6 @@
   #right {
     padding: 1em 0 0 1em;
     width: fit-content;
-
-    width: 7em;
   }
 
   #right a {
@@ -142,5 +140,16 @@
   #links.visible {
     transform: translateX(0);
     transition: transform 0.2s;
+  }
+
+  @media (max-width: 1024px) {
+    #logo {
+      height: 3em;
+    }
+
+    #links a {
+      color: var(--text-emphasis);
+      font-weight: 700;
+    }
   }
 </style>
