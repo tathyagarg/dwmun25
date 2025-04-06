@@ -103,7 +103,7 @@
   }
 
   #right {
-    padding: 1em 0 0 1em;
+    padding: 1em 0 0 2.5em;
     width: fit-content;
   }
 
