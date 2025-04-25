@@ -104,11 +104,10 @@
           style="
             --i: {div.id};
             --size: {radius / 2}em;
-            transform: translate(-50%, -50%) translate(
-              {positions[div.pos].x}em,
-              {positions[div.pos].y}em
-            );
+            --x: {positions[div.pos].x}em;
+            --y: {positions[div.pos].y}em;
           "
+          class:translated={width >= 1024}
         ></div>
       {/each}
     </div>
@@ -117,6 +116,10 @@
 <section></section>
 
 <style>
+  .translated {
+    transform: translate(-50%, -50%) translate(var(--x), var(--y));
+  }
+
   section {
     height: 100vh;
   }
@@ -320,7 +323,7 @@
     transition: transform 0.5s ease-in-out;
   }
 
-  @media (max-width: 1024px) {
+  @media (orientation: portrait) {
     #hero {
       flex-direction: column;
     }
@@ -335,6 +338,11 @@
       align-items: center;
     }
 
+    #right {
+      max-width: 100vw;
+      flex: 0.5;
+    }
+
     #slogan {
       width: 100%;
     }
@@ -346,11 +354,6 @@
 
     #hero h1 {
       font-size: 4em;
-    }
-
-    #right {
-      width: 100%;
-      height: 50vh;
     }
 
     #buttons a {
@@ -377,20 +380,33 @@
     }
 
     #committees-container {
+      transform: unset;
+      position: relative;
       top: 0;
       left: 0;
-      transform: translate(0, 0);
+
+      width: 100%;
+      height: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      gap: 1em;
     }
 
     #ring {
-      top: 0;
-      left: 10%;
-      transform: translate(0, 0);
+      display: none;
     }
 
     .committee-logo {
-      left: 25%;
-      width: 10em;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+
+      position: relative !important;
+      margin: 0 0;
     }
   }
 </style>
