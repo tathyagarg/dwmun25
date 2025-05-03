@@ -1,114 +1,31 @@
 <script lang="ts">
   import logo from "$lib/images/logo.png";
-  import { onMount } from "svelte";
+  import "$lib/styles/global.css";
 
   let { children } = $props();
-  let isVisible = $state(false);
-
-  onMount(() => {
-    const nav = document.querySelector("nav");
-
-    nav?.addEventListener("mouseover", () => {
-      isVisible = true;
-    });
-
-    nav?.addEventListener("mouseleave", () => {
-      isVisible = false;
-    });
-  });
 </script>
 
-<nav>
-  <div id="right">
+<nav
+  class="flex flex-row items-center gap-[2em] fixed w-full px-[2.5em] py-[1em] box-border
+  bg-[var(--bg1)]/20 backdrop-blur-2xl z-10"
+>
+  <div>
     <a href="/">
       <img src={logo} alt="logo" id="logo" />
     </a>
   </div>
-  <div id="links" class:visible={isVisible}>
-    <hr style="width: 5em;" />
-    <a href="/resources">Resources</a>
-    <a href="/committees">Committees</a>
-    <a href="/secratariat">Secratariat</a>
-  </div>
+  <a href="/resources">Resources</a>
+  <a href="/committees">Committees</a>
+  <a href="/secratariat">Secratariat</a>
 </nav>
 
-{@render children()}
+<div class="py-[1em] px-[2.5em]">
+  {@render children()}
+</div>
 
 <style>
-  @font-face {
-    font-family: "Kuchek";
-    font-style: normal;
-    font-weight: 400;
-    src: url("/fonts/Kuchek.ttf") format("truetype");
-  }
-
-  @font-face {
-    font-family: "JuliusSans";
-    font-style: normal;
-    font-weight: 400;
-    src: url("/fonts/JuliusSansOne.ttf") format("truetype");
-  }
-
-  :global(:root) {
-    --bg1: #141f14;
-    --bg2: #1a241a;
-    --bg3: #1a3421;
-    --bg4: #1a2421;
-
-    --text: #cfc8b5;
-    --text-emphasis: #fff;
-  }
-
-  :global(body) {
-    background-color: var(--bg1);
-    color: var(--text);
-
-    height: 100vh;
-    width: 100vw;
-
-    margin: 0;
-    padding: 0;
-
-    font-family: "JuliusSans";
-  }
-
-  :global(a:not(.default)) {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.2s;
-
-    &:hover {
-      color: var(--text-emphasis);
-    }
-  }
-
-  nav {
-    display: flex;
-    flex-direction: column;
-
-    justify-content: flex-start;
-    position: absolute;
-    width: fit-content;
-  }
-
-  #links a {
-    text-align: left;
-    padding: 0.5em 0;
-    font-size: 1.2em;
-  }
-
-  #links hr {
-    border-top: 1px solid var(--text);
-    margin: 1em 0;
-  }
-
-  #right {
-    padding: 1em 0 0 2.5em;
-    width: fit-content;
-  }
-
-  #right a {
-    margin: 0 auto;
+  a {
+    height: fit-content;
   }
 
   #logo {
@@ -128,28 +45,9 @@
     }
   }
 
-  #links {
-    display: flex;
-    flex-direction: column;
-    transform: translateX(-10em);
-    transition: transform 0.2s;
-
-    width: 7em;
-  }
-
-  #links.visible {
-    transform: translateX(2.5em);
-    transition: transform 0.2s;
-  }
-
   @media (max-width: 1024px) {
     #logo {
       height: 3em;
-    }
-
-    #links a {
-      color: var(--text-emphasis);
-      font-weight: 700;
     }
   }
 </style>

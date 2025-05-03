@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
   import { onMount } from "svelte";
 
   let radius = 40;
@@ -75,16 +75,20 @@
   });
 </script>
 
-<section id="hero">
-  <div id="left">
-    <h2 id="dates">July 31, 2025 - August 2, 2025</h2>
-    <h1>DWMUN'25</h1>
-    <div id="slogan">
+<section
+  class="flex flex-row justify-between items-center w-[calc(100vw-5em)] h-screen portrait:flex-col"
+>
+  <div class="flex-1/2 flex flex-col justify-center h-full">
+    <h2 class="[font-size:clamp(1em,2vw,2em)]">
+      July 31, 2025 - August 2, 2025
+    </h2>
+    <h1 class="[font-size:clamp(3em,8vw,8em)]">DWMUN'25</h1>
+    <div class="flex [font-size:clamp(1em,2vw,2em)] gap-[0.5em]">
       <h2>Bigger.</h2>
       <h2>Better.</h2>
       <h2>Brighter.</h2>
     </div>
-    <div id="buttons">
+    <div id="buttons" class="[font-size:clamp(.5em,3vw,1.5em)]">
       <a href="/register">Register</a>
       <a href="/committees">Committees</a>
     </div>
@@ -95,12 +99,12 @@
       <h2 id="seconds">00</h2>
     </div>
   </div>
-  <div id="right">
+  <div class="flex-1/2 w-full h-full relative overflow-hidden">
     <div id="ring" style="--radius: {radius}em"></div>
     <div id="committees-container">
       {#each divs as div}
         <div
-          class="committee-logo"
+          class="committee-logo portrait:w-[33vw]"
           style="
             --i: {div.id};
             --size: {radius / 2}em;
@@ -124,80 +128,6 @@
     height: 100vh;
   }
 
-  #hero {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    height: 100%;
-    width: 100%;
-  }
-
-  #left {
-    flex: 1;
-    height: 100%;
-    max-width: 100vw;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 0 2.5em;
-    box-sizing: border-box;
-  }
-
-  #hero h1 {
-    font-family: "Kuchek";
-    font-size: 8em;
-    margin: 0;
-
-    background: linear-gradient(
-      to right,
-      var(--text),
-      rgba(from var(--text) r g b / 0.7),
-      var(--text),
-      var(--text),
-      rgba(from var(--text) r g b / 0.7),
-      var(--text)
-    );
-    background-size: 300% 100%;
-    background-position: 0% 50%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    animation: gradient 5s linear infinite;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    100% {
-      background-position: -150% 50%;
-    }
-  }
-
-  #slogan {
-    width: 75%;
-
-    display: flex;
-    justify-content: space-between;
-  }
-
-  #slogan h2,
-  #dates {
-    font-size: 2em;
-    font-weight: 400;
-    margin: 0.5em 0;
-  }
-
-  #right {
-    flex: 1;
-    height: 100%;
-  }
-
   #buttons {
     margin-top: 2em;
 
@@ -209,7 +139,6 @@
 
   #buttons a {
     padding: 0.5em 2em;
-    font-size: 1.5em;
     font-weight: 600;
     text-align: center;
 
@@ -231,8 +160,6 @@
   #countdown {
     display: flex;
     align-items: center;
-
-    gap: 2em;
 
     margin-top: 2em;
   }
@@ -274,19 +201,13 @@
     display: block;
   }
 
-  #right {
-    position: relative;
-    overflow: hidden;
-  }
-
   #ring {
     position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-40%, -50%);
+    top: -25%;
+    left: 25%;
 
-    width: calc(var(--radius) * 2);
-    height: calc(var(--radius) * 2);
+    height: 150%;
+    aspect-ratio: 1;
 
     border-radius: 50%;
 
@@ -295,11 +216,8 @@
 
   #committees-container {
     position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-40%, -50%);
 
-    width: 200%;
+    width: 100%;
     height: 100%;
 
     display: flex;
@@ -310,57 +228,19 @@
   }
 
   .committee-logo {
-    width: var(--size);
+    width: 20vw;
     aspect-ratio: 1;
 
     background-color: var(--text);
-    margin: 1em 0;
 
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 100%;
 
     transition: transform 0.5s ease-in-out;
   }
 
   @media (orientation: portrait) {
-    #hero {
-      flex-direction: column;
-    }
-
-    #left {
-      padding: 0;
-      box-sizing: border-box;
-      width: 50%;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #right {
-      max-width: 100vw;
-      flex: 0.5;
-    }
-
-    #slogan {
-      width: 100%;
-    }
-
-    #slogan h2,
-    #dates {
-      font-size: 1.25em;
-    }
-
-    #hero h1 {
-      font-size: 4em;
-    }
-
-    #buttons a {
-      font-size: 1.2em;
-      padding: 0.5em 1em;
-    }
-
     #countdown {
       gap: 0.2em;
       margin-top: 1em;
@@ -401,9 +281,8 @@
 
     .committee-logo {
       top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
+      left: 50%;
+      transform: translateX(-50%);
 
       position: relative !important;
       margin: 0 0;
