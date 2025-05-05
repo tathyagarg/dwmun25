@@ -6,8 +6,8 @@
 </script>
 
 <nav
-  class="flex flex-row items-center gap-[2em] absolute w-full px-[2.5em] py-[1em] box-border
-  z-10"
+  class="flex flex-row items-center gap-[4em] absolute w-full px-[2.5em] py-[1em] box-border
+  z-10 portrait:gap-[2em]"
 >
   <div>
     <a href="/">
@@ -26,7 +26,7 @@
 <style>
   a {
     height: fit-content;
-    font-size: clamp(0.5em, 1vw, 1em);
+    font-size: clamp(0.5em, 2.5vw, 1em);
   }
 
   #logo {

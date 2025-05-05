@@ -73,21 +73,14 @@
       }));
     }, 5000);
   });
-
-  const colors = [
-    "#FF5733",
-    "#33FF57",
-    "#3357FF",
-    "#FF33A1",
-    "#A133FF",
-    "#33FFA1",
-  ];
 </script>
 
 <section
   class="flex flex-row justify-between items-center w-full h-screen portrait:flex-col"
 >
-  <div class="flex-1/2 flex flex-col justify-center h-full pl-[2.5em]">
+  <div
+    class="flex-1/2 w-full flex flex-col justify-center h-full pl-[2.5em] portrait:mt-[1em]"
+  >
     <h2 class="[font-size:clamp(1em,2vw,2em)]">
       July 31, 2025 - August 2, 2025
     </h2>
@@ -108,13 +101,15 @@
       <h2 id="seconds">00</h2>
     </div>
   </div>
-  <div class="flex-1/2 w-full h-full relative overflow-hidden">
+  <div
+    class="flex-1/2 w-full h-full relative overflow-hidden portrait:max-h-[33vw]"
+  >
     <div
       class="absolute top-[-25%] left-[50%] h-[150%] aspect-square rounded-full border-[var(--text)]/10 border-dotted border-[1em] portrait:hidden"
     ></div>
     <div
       id="committees-container"
-      class="top-0 left-0 portrait:w-fit"
+      class="top-0 left-0 w-full portrait:w-fit portrait:h-[33vw]!"
       class:marquee={width < 1024}
     >
       {#each divs.concat(divs) as div}
@@ -267,7 +262,7 @@
   @media (orientation: portrait) {
     #countdown {
       gap: 0.2em;
-      margin-top: 1em;
+      margin-top: 0em;
     }
 
     #countdown > h2 {
