@@ -5,7 +5,6 @@
   let { children } = $props();
 </script>
 
-<!--
 <nav
   class="flex flex-row items-center gap-[2em] absolute w-full px-[2.5em] py-[1em] box-border
   z-10"
@@ -19,7 +18,6 @@
   <a href="/committees">Committees</a>
   <a href="/secratariat">Secratariat</a>
 </nav>
--->
 
 <div class="">
   {@render children()}
@@ -28,6 +26,7 @@
 <style>
   a {
     height: fit-content;
+    font-size: clamp(0.5em, 1vw, 1em);
   }
 
   #logo {

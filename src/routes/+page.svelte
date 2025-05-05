@@ -73,6 +73,15 @@
       }));
     }, 5000);
   });
+
+  const colors = [
+    "#FF5733",
+    "#33FF57",
+    "#3357FF",
+    "#FF33A1",
+    "#A133FF",
+    "#33FFA1",
+  ];
 </script>
 
 <section
@@ -105,22 +114,10 @@
     ></div>
     <div
       id="committees-container"
-      class="top-0 left-0"
+      class="top-0 left-0 portrait:w-fit"
       class:marquee={width < 1024}
     >
-      {#each divs as div}
-        <div
-          class="committee-logo"
-          style="
-            --i: {div.id};
-            --size: {radius}em;
-            --x: {positions[div.pos].x}em;
-            --y: {positions[div.pos].y}em;
-          "
-          class:translated={width >= 1024}
-        ></div>
-      {/each}
-      {#each divs as div}
+      {#each divs.concat(divs) as div}
         <div
           class="committee-logo portrait:w-[33vw]"
           style="
@@ -156,14 +153,16 @@
     overflow: hidden;
     display: block;
     animation: marquee 10s linear infinite;
+
+    width: fit-content;
   }
 
   @keyframes marquee {
     0% {
-      transform: translate(0, 0);
+      transform: translateX(0);
     }
     100% {
-      transform: translate(-50%, 0);
+      transform: translateX(-50%);
     }
   }
 
@@ -243,7 +242,6 @@
   #committees-container {
     position: absolute;
 
-    width: 100%;
     height: 100%;
 
     display: flex;
@@ -291,10 +289,8 @@
       top: 0;
       left: 0;
 
-      width: calc(calc(33vw * 6) + 6em);
-      height: 100%;
-
       display: flex;
+      align-items: flex-start;
 
       gap: 1em;
     }
