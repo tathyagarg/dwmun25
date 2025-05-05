@@ -5,9 +5,10 @@
   let { children } = $props();
 </script>
 
+<!--
 <nav
-  class="flex flex-row items-center gap-[2em] fixed w-full px-[2.5em] py-[1em] box-border
-  bg-[var(--bg1)]/20 backdrop-blur-2xl z-10"
+  class="flex flex-row items-center gap-[2em] absolute w-full px-[2.5em] py-[1em] box-border
+  z-10"
 >
   <div>
     <a href="/">
@@ -18,8 +19,9 @@
   <a href="/committees">Committees</a>
   <a href="/secratariat">Secratariat</a>
 </nav>
+-->
 
-<div class="py-[1em] px-[2.5em]">
+<div class="">
   {@render children()}
 </div>
 

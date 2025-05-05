@@ -71,14 +71,14 @@
         ...div,
         pos: (div.pos + 1) % divs.length,
       }));
-    }, 10000);
+    }, 5000);
   });
 </script>
 
 <section
-  class="flex flex-row justify-between items-center w-[calc(100vw-5em)] h-screen portrait:flex-col"
+  class="flex flex-row justify-between items-center w-full h-screen portrait:flex-col"
 >
-  <div class="flex-1/2 flex flex-col justify-center h-full">
+  <div class="flex-1/2 flex flex-col justify-center h-full pl-[2.5em]">
     <h2 class="[font-size:clamp(1em,2vw,2em)]">
       July 31, 2025 - August 2, 2025
     </h2>
@@ -100,8 +100,26 @@
     </div>
   </div>
   <div class="flex-1/2 w-full h-full relative overflow-hidden">
-    <div id="ring" style="--radius: {radius}em"></div>
-    <div id="committees-container">
+    <div
+      class="absolute top-[-25%] left-[50%] h-[150%] aspect-square rounded-full border-[var(--text)]/10 border-dotted border-[1em] portrait:hidden"
+    ></div>
+    <div
+      id="committees-container"
+      class="top-0 left-0"
+      class:marquee={width < 1024}
+    >
+      {#each divs as div}
+        <div
+          class="committee-logo"
+          style="
+            --i: {div.id};
+            --size: {radius}em;
+            --x: {positions[div.pos].x}em;
+            --y: {positions[div.pos].y}em;
+          "
+          class:translated={width >= 1024}
+        ></div>
+      {/each}
       {#each divs as div}
         <div
           class="committee-logo portrait:w-[33vw]"
@@ -117,7 +135,12 @@
     </div>
   </div>
 </section>
-<section></section>
+<section>
+  <div class="flex flex-col h-screen p-[2.5em] box-border">
+    <h1 class="[font-size:clamp(1.5em,4vw,4em)]">About DWMUN</h1>
+    hairy balls
+  </div>
+</section>
 
 <style>
   .translated {
@@ -126,6 +149,22 @@
 
   section {
     height: 100vh;
+  }
+
+  .marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    animation: marquee 10s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-50%, 0);
+    }
   }
 
   #buttons {
@@ -201,19 +240,6 @@
     display: block;
   }
 
-  #ring {
-    position: absolute;
-    top: -25%;
-    left: 25%;
-
-    height: 150%;
-    aspect-ratio: 1;
-
-    border-radius: 50%;
-
-    border: 1em dotted rgba(from var(--text) r g b / 0.1);
-  }
-
   #committees-container {
     position: absolute;
 
@@ -235,7 +261,7 @@
 
     position: absolute;
     top: 50%;
-    left: 100%;
+    left: 125%;
 
     transition: transform 0.5s ease-in-out;
   }
@@ -265,27 +291,23 @@
       top: 0;
       left: 0;
 
-      width: 100%;
+      width: calc(calc(33vw * 6) + 6em);
       height: 100%;
 
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 1fr);
+      display: flex;
 
       gap: 1em;
     }
 
-    #ring {
-      display: none;
-    }
-
     .committee-logo {
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-
       position: relative !important;
       margin: 0 0;
+
+      top: 0;
+      left: 0;
+
+      width: 33vw;
+      height: 33vw;
     }
   }
 </style>
