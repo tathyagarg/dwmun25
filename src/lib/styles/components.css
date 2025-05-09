@@ -2,3 +2,29 @@ h1 {
   font-family: "Kuchek";
   margin: 0;
 }
+
+.ipshita-is-gay {
+  background: linear-gradient(
+    to right,
+    var(--text) 0%,
+    var(--text) 40%,
+    rgba(from var(--text) r g b / 0.5) 50%,
+    var(--text) 60%,
+    var(--text) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  animation: streak 10s linear infinite;
+}
+
+@keyframes streak {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

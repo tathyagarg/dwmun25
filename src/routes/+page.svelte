@@ -85,14 +85,14 @@
     <h2 class="[font-size:clamp(1em,2vw,2em)]">
       July 31, 2025 - August 2, 2025
     </h2>
-    <h1 class="[font-size:clamp(3em,8vw,8em)]">DWMUN'25</h1>
+    <h1 class="[font-size:clamp(3em,8vw,8em)] ipshita-is-gay">DWMUN'25</h1>
     <div class="flex [font-size:clamp(1em,2vw,2em)] gap-[0.5em]">
       <h2>Bigger.</h2>
       <h2>Better.</h2>
       <h2>Brighter.</h2>
     </div>
     <div id="buttons" class="[font-size:clamp(.5em,3vw,1.5em)]">
-      <a href="/register">Register</a>
+      <a href="/register" class="animate-bounce">Register</a>
       <a href="/committees">Committees</a>
     </div>
     <div id="countdown">

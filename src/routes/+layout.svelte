@@ -16,7 +16,11 @@
 >
   <div>
     <a href="/">
-      <img src="/logo.png" alt="logo" id="logo" />
+      <img
+        src="/logo.png"
+        alt="logo"
+        class="h-[5em] animate-fadein portrait:h-[3em]"
+      />
     </a>
   </div>
   <a href="/resources">Resources</a>
@@ -34,28 +38,5 @@
   a {
     height: fit-content;
     font-size: clamp(0.5em, 2.5vw, 1em);
-  }
-
-  #logo {
-    height: 5em;
-    animation: fadeIn 5s ease infinite;
-  }
-
-  @keyframes fadeIn {
-    from {
-      filter: brightness(0.4);
-    }
-    50% {
-      filter: brightness(1);
-    }
-    to {
-      filter: brightness(0.4);
-    }
-  }
-
-  @media (max-width: 1024px) {
-    #logo {
-      height: 3em;
-    }
   }
 </style>

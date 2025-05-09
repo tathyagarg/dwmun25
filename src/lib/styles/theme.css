@@ -6,4 +6,19 @@
 
   --text: #cfc8b5;
   --text-emphasis: #fff;
+
+  --animate-fadein: fadeIn 5s ease infinite;
+  --animate-streak: streak 5s ease infinite;
+
+  @keyframes fadeIn {
+    from {
+      filter: brightness(0.4);
+    }
+    50% {
+      filter: brightness(1);
+    }
+    to {
+      filter: brightness(0.4);
+    }
+  }
 }
