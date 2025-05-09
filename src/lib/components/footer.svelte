@@ -10,8 +10,10 @@ do not use any script tags whatsoever
 use only tailwindcss for styling
 generate the whole thing in one go
 -->
-<footer class="flex flex-col bg-(--bg2) h-[40vh] w-full p-8 gap-8">
-  <h1 class="text-4xl font-bold text-(--text)">Contact Us</h1>
+<footer
+  class="flex flex-col bg-black/10 backdrop-blur-sm h-[40vh] w-full p-8 gap-8"
+>
+  <h1 class="text-4xl font-bold text-(--text) m-0">Contact Us</h1>
   <hr />
   <div class="flex flex-row h-full">
     <div class="flex flex-col flex-1">

@@ -129,11 +129,11 @@
   </div>
 </section>
 <section style="height: fit-content">
-  <div class="flex flex-col h-[100vh] p-[2.5em] box-border">
+  <div class="flex flex-col h-fit p-[2.5em] box-border">
     <h1 class="[font-size:clamp(1.5em,4vw,4em)]">Letter from the OC</h1>
     <br />
-    <div class="flex flex-row">
-      <div class="flex flex-col h-full mt-8 justify-between px-4 border-box">
+    <div class="flex flex-row my-8">
+      <div class="flex flex-col h-screen justify-between px-4 border-box">
         <Polaroid src="/images/UNSC.jpeg" alt="UNSC" rotate={-7} />
         <Polaroid src="/images/Committee X.jpeg" alt="Committee X" rotate={7} />
       </div>
@@ -164,16 +164,13 @@
           nemo id modi repellat voluptate vero nobis architecto. Numquam?
         </i>
       </div>
-      <div
-        class="flex flex-col h-full justify-between px-4 mt-[8vw] border-box"
-      >
+      <div class="flex flex-col h-screen justify-between px-4 border-box">
         <Polaroid src="/images/IPC.jpeg" alt="IPC" rotate={12} />
         <Polaroid src="/images/UNHRC.jpeg" alt="UNHRC" rotate={-8} />
       </div>
     </div>
   </div>
 </section>
-<section class="h-[12vw] w-full"></section>
 
 <style>
   .translated {
