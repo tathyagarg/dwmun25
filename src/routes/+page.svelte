@@ -132,13 +132,17 @@
   <div class="flex flex-col h-fit p-[2.5em] box-border">
     <h1 class="[font-size:clamp(1.5em,4vw,4em)]">Letter from the OC</h1>
     <br />
-    <div class="flex flex-row my-8">
-      <div class="flex flex-col h-screen justify-between px-4 border-box">
+    <div class="flex flex-row my-8 portrait:flex-col">
+      <div
+        class="flex flex-col h-screen justify-between px-4 border-box portrait:flex-row portrait:h-fit"
+      >
         <Polaroid src="/images/UNSC.jpeg" alt="UNSC" rotate={-7} />
         <Polaroid src="/images/Committee X.jpeg" alt="Committee X" rotate={7} />
       </div>
-      <div class="flex flex-col h-fit gap-2 px-16 py-8 border-box">
-        <i class="text-2xl/8 ml-4 text-center">
+      <div
+        class="flex flex-col h-fit gap-2 px-16 py-8 border-box text-2xl/8 portrait:px-0 portrait:text-lg portrait:*:m-0"
+      >
+        <i class="ml-4 text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Id adipisci
           voluptate mollitia nobis doloribus officia quisquam? Unde eligendi
           neque ipsa, saepe enim cum ad? Quas, reiciendis cupiditate. Eius,
@@ -151,7 +155,7 @@
           nemo id modi repellat voluptate vero nobis architecto. Numquam?
         </i>
         <br />
-        <i class="text-2xl/8 ml-4 text-center">
+        <i class="ml-4 text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Id adipisci
           voluptate mollitia nobis doloribus officia quisquam? Unde eligendi
           neque ipsa, saepe enim cum ad? Quas, reiciendis cupiditate. Eius,
@@ -164,7 +168,9 @@
           nemo id modi repellat voluptate vero nobis architecto. Numquam?
         </i>
       </div>
-      <div class="flex flex-col h-screen justify-between px-4 border-box">
+      <div
+        class="flex flex-col h-screen justify-between px-4 border-box portrait:flex-row portrait:h-fit"
+      >
         <Polaroid src="/images/IPC.jpeg" alt="IPC" rotate={12} />
         <Polaroid src="/images/UNHRC.jpeg" alt="UNHRC" rotate={-8} />
       </div>
