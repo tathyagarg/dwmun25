@@ -1,9 +1,14 @@
 <script lang="ts">
-  import logo from "$lib/images/logo.png";
+  import Footer from "$lib/components/footer.svelte";
   import "$lib/styles/global.css";
 
   let { children } = $props();
 </script>
+
+<svelte:head>
+  <title>DWMUN'25</title>
+  <link rel="icon" href="/logo.png" type="image/png" />
+</svelte:head>
 
 <nav
   class="flex flex-row items-center gap-[4em] absolute w-full px-[2.5em] py-[1em] box-border
@@ -11,7 +16,7 @@
 >
   <div>
     <a href="/">
-      <img src={logo} alt="logo" id="logo" />
+      <img src="/logo.png" alt="logo" id="logo" />
     </a>
   </div>
   <a href="/resources">Resources</a>
@@ -19,9 +24,11 @@
   <a href="/secratariat">Secratariat</a>
 </nav>
 
-<div class="">
+<div>
   {@render children()}
 </div>
+
+<Footer />
 
 <style>
   a {
