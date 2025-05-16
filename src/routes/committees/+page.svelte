@@ -32,8 +32,10 @@
 </svg>
 
 <section>
-  <h1 class="text-8xl w-full text-center">Committees</h1>
-  <div class="grid grid-cols-3 grid-rows-2 gap-[2em] w-[90%] mx-auto">
+  <h1 class="text-8xl w-full text-center portrait:text-5xl">Committees</h1>
+  <div
+    class="grid grid-cols-3 grid-rows-2 gap-[2em] w-[90%] mx-auto portrait:grid-cols-1 portrait:grid-rows-6"
+  >
     {#each Object.entries(committees) as [committee, logo]}
       <div class="flex flex-col items-center justify-center relative">
         <h2
@@ -51,4 +53,3 @@
     {/each}
   </div>
 </section>
-

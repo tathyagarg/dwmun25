@@ -12,20 +12,21 @@
 
 <nav
   class="flex flex-row items-center gap-[4em] w-full px-[2.5em] py-[1em] box-border
-  z-10 portrait:gap-[2em]"
+  z-10 portrait:gap-[2em] portrait:px-[1em]"
 >
   <div>
-    <a href="/">
+    <a href="/" class="h-fit w-fit">
       <img
         src="/logo.png"
         alt="logo"
-        class="h-[5em] animate-fadein portrait:h-[3em]"
+        class="h-[5em] aspect-square animate-fadein portrait:h-[3em] portrait:min-w-[3em]"
       />
     </a>
   </div>
   <a href="/resources">Resources</a>
   <a href="/committees">Committees</a>
-  <a href="/secratariat">Secratariat</a>
+  <a href="/secretariat">Secretariat</a>
+  <a href="/register">Register</a>
 </nav>
 
 <div>
