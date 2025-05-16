@@ -26,6 +26,15 @@
     pos: i,
   }));
 
+  const images = [
+    "/images/logos/CCC.png",
+    "/images/logos/SC.png",
+    "/images/logos/HRC.png",
+    "/images/logos/ODC.png",
+    "/images/logos/LS.png",
+    "/images/logos/IPC.png",
+  ];
+
   onMount(() => {
     updateWidth();
     window.addEventListener("resize", updateWidth);
@@ -115,14 +124,20 @@
     >
       {#each divs.concat(divs) as div}
         <div
-          class="committee-logo portrait:w-[33vw]"
+          class="committee-logo portrait:w-[33vw] flex justify-center items-center"
           style="
             --i: {div.id};
             --x: {positions[div.pos].x}em;
             --y: {positions[div.pos].y}em;
           "
           class:translated={width >= 1024}
-        ></div>
+        >
+          <img
+            src={images[div.id]}
+            alt="Committee Logo"
+            class="w-full h-full object-cover p-4"
+          />
+        </div>
       {/each}
     </div>
   </div>
@@ -288,8 +303,6 @@
   .committee-logo {
     width: 20vw;
     aspect-ratio: 1;
-
-    background-color: var(--text);
 
     position: absolute;
     top: 50%;
