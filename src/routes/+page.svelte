@@ -130,7 +130,7 @@
             --x: {positions[div.pos].x}em;
             --y: {positions[div.pos].y}em;
           "
-          class:translated={width >= 1024}
+          class:translated={width > 1024}
         >
           <img
             src={images[div.id]}

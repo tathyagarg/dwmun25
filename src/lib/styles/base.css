@@ -38,7 +38,3 @@ a:not(.default) {
     color: var(--text-emphasis);
   }
 }
-
-section {
-  min-height: 100vh;
-}
