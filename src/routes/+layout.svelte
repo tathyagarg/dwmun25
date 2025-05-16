@@ -11,7 +11,7 @@
 </svelte:head>
 
 <nav
-  class="flex flex-row items-center gap-[4em] absolute w-full px-[2.5em] py-[1em] box-border
+  class="flex flex-row items-center gap-[4em] w-full px-[2.5em] py-[1em] box-border
   z-10 portrait:gap-[2em]"
 >
   <div>

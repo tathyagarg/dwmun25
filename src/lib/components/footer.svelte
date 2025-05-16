@@ -17,24 +17,26 @@ generate the whole thing in one go
   <hr class="m-0" />
   <div class="flex flex-row h-full portrait:flex-col">
     <div class="flex flex-col flex-1">
-      <p class="text-xl text-(--text) mt-4">
+      <p class="text-xl text-(--text) mt-4 portrait:text-sm">
         Email: <a
           href="mailto:mundpswhitefield@gmail.com"
           class="text-blue-500 hover:underline">mundpswhitefield@gmail.com</a
         >
       </p>
-      <p class="text-xl text-(--text) mt-4">
+      <p class="text-xl text-(--text) mt-4 portrait:text-sm">
         Instagram: <a
           href="https://www.instagram.com/dwmun/"
           class="text-blue-500 hover:underline">@dwmun</a
         >
       </p>
-      <p class="text-xl text-(--text) mt-4">
+      <p class="text-xl text-(--text) mt-4 portrait:text-sm">
         Phone: <a href="tel:+1234567890" class="text-blue-500 hover:underline"
           >+91 1234567890</a
         >
       </p>
-      <div class="text-xl text-(--text) mt-4 flex flex-row gap-2">
+      <div
+        class="text-xl text-(--text) mt-4 flex flex-row gap-2 portrait:text-sm"
+      >
         Address:
         <div>
           <a

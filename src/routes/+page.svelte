@@ -103,10 +103,10 @@
     </div>
   </div>
   <div
-    class="flex-1/2 w-full h-full relative overflow-hidden portrait:max-h-[33vw]"
+    class="flex-1/2 w-full h-full overflow-hidden portrait:max-h-[33vw] absolute top-0 left-0 pointer-events-none portrait:relative"
   >
     <div
-      class="absolute top-[-25%] left-[50%] h-[150%] aspect-square rounded-full border-[var(--text)]/10 border-dotted border-[1em] portrait:hidden"
+      class="absolute top-[-25%] left-[62.5%] h-[150%] aspect-square rounded-full border-[var(--text)]/10 border-dotted border-[1em] portrait:hidden"
     ></div>
     <div
       id="committees-container"
@@ -118,7 +118,6 @@
           class="committee-logo portrait:w-[33vw]"
           style="
             --i: {div.id};
-            --size: {radius / 2}em;
             --x: {positions[div.pos].x}em;
             --y: {positions[div.pos].y}em;
           "
@@ -294,7 +293,7 @@
 
     position: absolute;
     top: 50%;
-    left: 125%;
+    left: 100%;
 
     transition: transform 0.5s ease-in-out;
   }
