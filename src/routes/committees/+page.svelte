@@ -39,7 +39,7 @@
     {#each Object.entries(committees) as [committee, logo]}
       <div class="flex flex-col items-center justify-center relative">
         <h2
-          class="text-2xl absolute text-(--bg1) bg-(--text) top-0 left-0 w-[45%] h-[10%] z-10 rounded-br-xl rounded-tl-xl px-4 flex items-center justify-center"
+          class="text-4xl absolute text-(--bg1) bg-(--text) top-0 left-0 w-[45%] h-[10%] z-10 rounded-br-xl rounded-tl-xl px-4 flex items-center justify-center"
         >
           {committee}
         </h2>
