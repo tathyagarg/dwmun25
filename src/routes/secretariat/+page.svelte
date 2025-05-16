@@ -21,7 +21,7 @@
       image: "/images/secretariat/ipshita.png",
     },
     {
-      name: "Advika",
+      name: "Advika Gupta",
       role: "Head of Design",
       image: "/images/secretariat/advika.png",
     },
