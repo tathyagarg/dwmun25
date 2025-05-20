@@ -1,17 +1,5 @@
-<!--
-make a footer, with contact info and social media links 
-height is 25vh, width is full
-background is --bg2
-
-content is static so no external data
-do not use external components.
-do not use any script tags whatsoever
-
-use only tailwindcss for styling
-generate the whole thing in one go
--->
 <footer
-  class="flex flex-col bg-black/10 backdrop-blur-sm h-[40vh] w-full p-8 gap-8 portrait:h-fit"
+  class="flex flex-col bg-black/10 backdrop-blur-sm min-h-[40vh] w-full p-8 gap-8 portrait:h-fit"
 >
   <h1 class="text-4xl font-bold text-(--text) m-0">Contact Us</h1>
   <hr class="m-0" />

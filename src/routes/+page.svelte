@@ -1,30 +1,22 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import Polaroid from "$lib/components/polaroid.svelte";
 
-  let radius = 40;
-  let width = 0;
-
-  const committeeCount = 6;
+  let width: number;
 
   const updateWidth = () => {
     width = window.innerWidth;
   };
 
-  $: radius = width >= 1024 ? 40 : width >= 768 ? 20 : 10;
+  let radius = 50;
 
-  $: positions = Array.from({ length: committeeCount }, (_, i) => {
-    const angle = (2 * Math.PI * i) / committeeCount;
+  let positions = Array.from({ length: 6 }, (_, i) => {
+    const angle = (2 * Math.PI * i) / 6;
     return {
       x: Math.cos(angle) * radius,
       y: Math.sin(angle) * radius,
     };
   });
-
-  let divs = Array.from({ length: committeeCount }, (_, i) => ({
-    id: i,
-    pos: i,
-  }));
 
   const images = [
     "/images/logos/CCC.png",
@@ -51,7 +43,7 @@
         const targetDate = new Date("2025-07-31T00:00:00Z");
         const countdownInterval = setInterval(() => {
           const now = new Date();
-          const timeLeft = targetDate - now;
+          const timeLeft = targetDate.getTime() - now.getTime();
 
           if (timeLeft <= 0) {
             clearInterval(countdownInterval);
@@ -76,12 +68,13 @@
       }
     }
 
-    setInterval(() => {
-      divs = divs.map((div) => ({
-        ...div,
-        pos: (div.pos + 1) % divs.length,
-      }));
-    }, 5000);
+    if (width >= 1024) {
+      setInterval(() => {
+        positions = positions.map(
+          (_, i) => positions[(i + 1) % positions.length],
+        );
+      }, 5000);
+    }
   });
 </script>
 
@@ -103,6 +96,7 @@
     <div id="buttons" class="[font-size:clamp(.5em,3vw,1.5em)]">
       <a href="/register" class="animate-bounce">Register</a>
       <a href="/committees">Committees</a>
+      <img src="/images/rotary.png" alt="logo" class="h-[2.5em]" />
     </div>
     <div id="countdown">
       <h2 id="days">00</h2>
@@ -115,29 +109,19 @@
     class="flex-1/2 w-full h-full overflow-hidden portrait:max-h-[33vw] absolute top-0 left-0 pointer-events-none portrait:relative"
   >
     <div
-      class="absolute top-[-25%] left-[62.5%] h-[150%] aspect-square rounded-full border-[var(--text)]/10 border-dotted border-[1em] portrait:hidden"
+      class="absolute top-0 right-[-50vh] h-full aspect-square rounded-full border-[var(--text)]/10 border-dotted border-[1em] portrait:hidden"
     ></div>
     <div
-      id="committees-container"
-      class="top-0 left-0 w-full portrait:w-fit portrait:h-[33vw]!"
+      class="absolute top-0 left-1/2 w-1/2 h-full portrait:w-fit portrait:h-[33vw]! portrait:relative portrait:left-0 portrait:flex! portrait:items-start portrait:gap-4"
       class:marquee={width < 1024}
     >
-      {#each divs.concat(divs) as div}
+      {#each positions.concat(positions) as { x, y }, i}
         <div
-          class="committee-logo portrait:w-[33vw] flex justify-center items-center"
-          style="
-            --i: {div.id};
-            --x: {positions[div.pos].x}em;
-            --y: {positions[div.pos].y}em;
-          "
-          class:translated={width > 1024}
-        >
-          <img
-            src={images[div.id]}
-            alt="Committee Logo"
-            class="w-full h-full object-cover p-4"
-          />
-        </div>
+          class="h-1/3 aspect-square absolute top-1/2 left-full bg-cover bg-center transition-all duration-400 portrait:relative portrait:m-0 portrait:top-0 portrait:left-0 portrait:w-[33vw] portrait:h-[33vw] portrait:transform-none!"
+          style="transform: translate(-50%, -50%) translate({x}vh, {y}vh); background-image: url({images[
+            i % images.length
+          ]});"
+        ></div>
       {/each}
     </div>
   </div>
@@ -154,32 +138,33 @@
         <Polaroid src="/images/Committee X.jpeg" alt="Committee X" rotate={7} />
       </div>
       <div
-        class="flex flex-col h-fit gap-2 px-16 py-8 border-box text-2xl/8 portrait:px-0 portrait:text-lg portrait:*:m-0"
+        class="flex flex-col h-fit gap-2 px-16 py-8 border-box text-2xl/8 portrait:px-0 portrait:text-sm portrait:*:m-0"
       >
-        <i class="ml-4 text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id adipisci
-          voluptate mollitia nobis doloribus officia quisquam? Unde eligendi
-          neque ipsa, saepe enim cum ad? Quas, reiciendis cupiditate. Eius,
-          maxime consequatur. Aliquid voluptatibus ex fuga esse, porro qui
-          consectetur incidunt minus nam commodi quo nostrum ea maiores dolore
-          perspiciatis dolor cum, officiis fugit accusamus quos? Placeat
-          laboriosam provident iusto adipisci aliquid. Neque aliquid obcaecati
-          maiores placeat blanditiis recusandae quas officiis cumque labore sunt
-          commodi iste esse, expedita reprehenderit velit laboriosam quo eos
-          nemo id modi repellat voluptate vero nobis architecto. Numquam?
+        <i class="ml-4"> Greetings delegates! </i>
+        <i class="ml-4 mt-4">
+          It is with great pride and enthusiasm that the Organising Committee
+          extends a warm invitation to you to attend DWMUN’25, hosted by Delhi
+          Public School, Whitefield. Scheduled to take place on 31st July and
+          1st and 2nd of August, this prestigious conference promises to be a
+          platform for young minds to engage in meaningful dialogue, critical
+          problem-solving, and diplomacy. DWMUN’25 brings together delegates
+          from across schools to simulate international diplomacy, as they
+          represent various nations and address pressing global issues, just as
+          diplomats do on real-world stages.
         </i>
-        <br />
-        <i class="ml-4 text-center">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id adipisci
-          voluptate mollitia nobis doloribus officia quisquam? Unde eligendi
-          neque ipsa, saepe enim cum ad? Quas, reiciendis cupiditate. Eius,
-          maxime consequatur. Aliquid voluptatibus ex fuga esse, porro qui
-          consectetur incidunt minus nam commodi quo nostrum ea maiores dolore
-          perspiciatis dolor cum, officiis fugit accusamus quos? Placeat
-          laboriosam provident iusto adipisci aliquid. Neque aliquid obcaecati
-          maiores placeat blanditiis recusandae quas officiis cumque labore sunt
-          commodi iste esse, expedita reprehenderit velit laboriosam quo eos
-          nemo id modi repellat voluptate vero nobis architecto. Numquam?
+        <i class="ml-4 mt-4">
+          This year, DWMUN will focus on promoting global cooperation,
+          peacebuilding, and innovative solutions across various committees.
+          Participants will not only gain a deeper understanding of
+          international relations, conflict resolution, and policy-making but
+          also develop leadership, oratory, and negotiation skills in a
+          collaborative environment. We would be honored by your presence at the
+          event in celebrating the spirit of diplomacy and youth engagement at
+          DWMUN’25.
+        </i>
+        <i class="ml-4 mt-4">
+          Warm regards,<br />Organising Committee<br />DWMUN’25<br />Delhi
+          Public School, Whitefield
         </i>
       </div>
       <div
@@ -193,10 +178,6 @@
 </section>
 
 <style>
-  .translated {
-    transform: translate(-50%, -50%) translate(var(--x), var(--y));
-  }
-
   .marquee {
     white-space: nowrap;
     overflow: hidden;
@@ -288,29 +269,6 @@
     display: block;
   }
 
-  #committees-container {
-    position: absolute;
-
-    height: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    overflow: hidden;
-  }
-
-  .committee-logo {
-    width: 20vw;
-    aspect-ratio: 1;
-
-    position: absolute;
-    top: 50%;
-    left: 100%;
-
-    transition: transform 0.5s ease-in-out;
-  }
-
   @media (orientation: portrait) {
     #countdown {
       gap: 0.2em;
@@ -328,29 +286,6 @@
     #countdown > h2:not(:last-child)::after {
       content: ":";
       margin: 0 0.2em;
-    }
-
-    #committees-container {
-      transform: unset;
-      position: relative;
-      top: 0;
-      left: 0;
-
-      display: flex;
-      align-items: flex-start;
-
-      gap: 1em;
-    }
-
-    .committee-logo {
-      position: relative !important;
-      margin: 0 0;
-
-      top: 0;
-      left: 0;
-
-      width: 33vw;
-      height: 33vw;
     }
   }
 </style>
