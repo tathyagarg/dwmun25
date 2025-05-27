@@ -110,7 +110,7 @@
   <div
     class="grid grid-cols-3 grid-rows-2 gap-[4em] w-[90%] mx-auto portrait:grid-cols-1 portrait:grid-rows-6"
   >
-    {#each Object.entries(committees) as [committee, { logo, name }]}
+    {#each Object.entries(committees) as [_, { logo, name }]}
       <div
         class="flex flex-col items-center justify-center relative cursor-pointer comm"
       >
