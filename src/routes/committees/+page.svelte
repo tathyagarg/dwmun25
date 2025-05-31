@@ -7,6 +7,7 @@
   let startIndex = 0;
   let translate = 0;
   let noTransition = false;
+  let isTransitioning = false;
 
   function getVisible(start: number) {
     const res = [];
@@ -19,13 +20,17 @@
   $: visible = getVisible(startIndex);
 
   function goTo(index: number) {
+    if (isTransitioning) return;
+
     let diff = index - startIndex;
     if (diff > 3) diff -= items.length;
     else if (diff < -3) diff += items.length;
 
     if (diff === 0) return;
 
+    isTransitioning = true;
     translate -= diff;
+
     setTimeout(() => {
       startIndex = index;
       noTransition = true;
@@ -33,6 +38,9 @@
       setTimeout(() => {
         noTransition = false;
       }, 20);
+      setTimeout(() => {
+        isTransitioning = false;
+      }, 150);
     }, 250);
   }
 
@@ -52,6 +60,21 @@
         previous();
       }
     });
+
+    on(
+      window,
+      "wheel",
+      (event) => {
+        if (Math.abs(event.deltaX) > 30) {
+          if (event.deltaX > 0) {
+            next();
+          } else if (event.deltaX < 0) {
+            previous();
+          }
+        }
+      },
+      { passive: true },
+    );
   });
 
   const committees = [

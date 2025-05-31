@@ -1,8 +1,6 @@
 @theme {
   --bg1: #141f14;
-  --bg2: #1a241a;
-  --bg3: #1a3421;
-  --bg4: #1a2421;
+  --bg2: 26, 36, 26;
 
   --text: #cfc8b5;
   --text-emphasis: #fff;
