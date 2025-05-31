@@ -58,7 +58,7 @@
     {
       name: "UNHRC",
       agenda:
-        "Human Rights Violations Arising from the Division of Cyprus with emphasis on\nthe Protection of Displaced and Minority Communities.\n\nFreeze Date: August 16, 1974",
+        "Human Rights Violations Arising from the Division of Cyprus with emphasis on the Protection of Displaced and Minority Communities.\n\nFreeze Date: August 16, 1974",
       bg: "/images/bgs/hrc.jpeg",
     },
     {
@@ -92,19 +92,19 @@
   ];
 </script>
 
-<div class="flex justify-center items-center mb-4 text-2xl">
+<div class="flex justify-center items-center mb-8 text-2xl">
   {#each committees as committee, index (committee)}
     <button
       on:click={() => goTo(index)}
       class:border-r-2={index != 5}
-      class="border-(--text) px-5"
+      class="border-(--text) px-5 hover:text-white duration-250 transition-color cursor-pointer"
     >
       {committee.name}
     </button>
   {/each}
 </div>
 
-<div class="relative w-full h-[75vh]">
+<div class="relative w-full h-[75vh] my-12">
   <div class="overflow-hidden w-full">
     <div
       class="flex gap-[7.5vw]"
@@ -127,5 +127,3 @@
     <button on:click={next}>&gt;</button>
   </div>
 </div>
-
-<br />
