@@ -114,6 +114,7 @@
     "
     >
       {#each visible as item (item)}
+        <!--<div class="card">meow {item}</div>-->
         <Committee data={committees[item]} />
       {/each}
     </div>
