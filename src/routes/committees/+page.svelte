@@ -2,6 +2,7 @@
   import Committee from "$lib/components/committee.svelte";
   import { onMount } from "svelte";
   import { on } from "svelte/events";
+  import { committees } from "$lib/data";
 
   const items = [0, 1, 2, 3, 4, 5];
   let startIndex = 0;
@@ -76,43 +77,6 @@
       { passive: true },
     );
   });
-
-  const committees = [
-    {
-      name: "UNHRC",
-      agenda:
-        "Human Rights Violations Arising from the Division of Cyprus with emphasis on the Protection of Displaced and Minority Communities.\n\nFreeze Date: August 16, 1974",
-      bg: "/images/bgs/hrc.jpeg",
-    },
-    {
-      name: "UNSC",
-      agenda:
-        "Deliberating on the situation in Western Sahara with special emphasis on reviewing and renewing the mandate of the United Nations Mission for the Referendum in Western Sahara (MINURSO)",
-      bg: "/images/bgs/sc.jpeg",
-    },
-    {
-      name: "CCC",
-      agenda: "August 17th 1666\n27.1795° N, 78.0211°E",
-      bg: "/images/bgs/ccc.jpeg",
-    },
-    {
-      name: "Lok Sabha",
-      agenda: "The 2002 Gujrat Riots\n\nFreeze Date: February 25, 2002",
-      bg: "/images/bgs/lok-sabha.jpeg",
-    },
-    {
-      name: "UNODC",
-      agenda:
-        "Countering the Surge of Synthetic Drug Production and Trafficking in Southeast Asia",
-      bg: "/images/bgs/odc.jpeg",
-    },
-    {
-      name: "IPC",
-      agenda:
-        "Discussing the Advent of Social Media as a Source of Information",
-      bg: "/images/bgs/ipc.jpeg",
-    },
-  ];
 </script>
 
 <div class="flex justify-center items-center mb-8 text-2xl">
@@ -137,16 +101,17 @@
     "
     >
       {#each visible as item (item)}
-        <!--<div class="card">meow {item}</div>-->
         <Committee data={committees[item]} />
       {/each}
     </div>
   </div>
 
-  <div
-    class="absolute w-[95%] h-full top-0 left-[2.5%] flex justify-between gap-4 text-6xl z-2"
+  <button
+    class="absolute left-0 top-1/2 ml-4 text-8xl cursor-pointer"
+    on:click={previous}>&lt;</button
   >
-    <button on:click={previous}>&lt;</button>
-    <button on:click={next}>&gt;</button>
-  </div>
+  <button
+    class="absolute right-0 top-1/2 mr-4 text-8xl cursor-pointer"
+    on:click={next}>&gt;</button
+  >
 </div>

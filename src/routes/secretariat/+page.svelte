@@ -1,51 +1,5 @@
 <script>
-  const people = [
-    {
-      name: "Chirantana Hedge",
-      role: "Secretary General",
-      image: "/images/secretariat/chirantana.png",
-    },
-    {
-      name: "Saachi Pathak",
-      role: "Director General",
-      image: "/images/secretariat/saachi.png",
-    },
-    {
-      name: "Aarav Sinha",
-      role: "Head of OC",
-      image: "/images/secretariat/aarav.png",
-    },
-    {
-      name: "Ipshita Basu",
-      role: "Head of Design",
-      image: "/images/secretariat/ipshita.png",
-    },
-    {
-      name: "Advika Gupta",
-      role: "Head of Design",
-      image: "/images/secretariat/advika.png",
-    },
-    {
-      name: "Niona Chakma",
-      role: "Head of Social Media",
-      image: "/images/secretariat/niona.png",
-    },
-    {
-      name: "Tathya Garg",
-      role: "Head of Tech",
-      image: "/images/secretariat/tathya.png",
-    },
-    {
-      name: "Kanika Mohan",
-      role: "Head of Delegate Affairs",
-      image: "/images/secretariat/kanika.png",
-    },
-    {
-      name: "Tejus Reddy B",
-      role: "Head of Logistics",
-      image: "/images/secretariat/tejus.png",
-    },
-  ];
+  import { people } from "$lib/data";
 </script>
 
 <section>

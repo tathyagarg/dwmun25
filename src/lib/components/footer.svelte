@@ -18,8 +18,8 @@
         >
       </p>
       <p class="text-xl text-(--text) mt-4 portrait:text-sm">
-        Phone: <a href="tel:+1234567890" class="text-blue-500 hover:underline"
-          >+91 1234567890</a
+        Phone: <a href="tel:+918197808194" class="text-blue-500 hover:underline"
+          >+91 8197808194</a
         >
       </p>
       <div
