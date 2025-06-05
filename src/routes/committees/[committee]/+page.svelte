@@ -113,46 +113,58 @@
 
 <section class="w-screen h-screen">
   <div
-    class="grid grid-cols-5 grid-rows-4 w-full h-full p-8 gap-4 *:rounded-md *:border-2 *:border-(--text) *:bg-(--bg1)"
+    class="grid grid-cols-5 grid-rows-6 w-full h-full p-8 *:border-2 *:border-(--text) *:bg-(--bg1) gap-x-4"
   >
     <div
-      class="col-start-1 col-span-3 row-start-1 row-span-2 flex flex-col justify-center items-center p-8"
+      class="col-start-1 col-span-3 row-start-1 row-span-6 flex flex-col justify-center items-center p-8 rounded-2xl relative"
     >
-      <h1 class="text-8xl m-4">{data.name}</h1>
-      <p class="text-center text-lg">{data.agenda}</p>
-    </div>
-    <div class="col-start-1 col-span-3 row-start-3 row-span-2 p-8">
-      <h2 class="text-4xl w-full border-b-2 border-(--text) mb-4">
-        About the Committee
-      </h2>
-      <p class="text-lg">{data.description}</p>
-    </div>
-    <div
-      class="col-start-4 col-span-1 row-start-1 row-span-2 flex flex-col items-center py-8 px-4 relative"
-    >
-      <h2 class="text-4xl">Chairpersons</h2>
-      <Chair data={data.chairpersons[curr]} />
-      <div
-        class="flex w-full h-full flex-row justify-between items-center absolute *:shadow-xl *:shadow-black"
-      >
-        <button
-          class="w-12 h-12 rounded-full bg-(--text) text-(--bg1) transition-colors ml-4"
-          onclick={() =>
-            goTo(
-              (curr - 1 + data.chairpersons.length) % data.chairpersons.length,
-            )}
-        >
-          &lt;
-        </button>
-        <button
-          class="w-12 h-12 rounded-full bg-(--text) text-(--bg1) transition-colors mr-4"
-          onclick={() => goTo((curr + 1) % data.chairpersons.length)}
-        >
-          &gt;
-        </button>
+      <div class="absolute w-full h-full">
+        <img
+          src={data.logo}
+          alt="Committee Logo"
+          class="w-[90%] h-[90%] m-[5%] object-cover rounded-tl-2xl opacity-10"
+        />
+      </div>
+      <div class="flex-2 flex flex-col items-center justify-center">
+        <h1 class="text-9xl m-4">{data.name}</h1>
+        <p class="text-center text-2xl">{data.agenda}</p>
+      </div>
+      <div class="flex-1 flex flex-col items-center justify-start">
+        <h2 class="text-4xl w-full border-b-2 border-(--text) mb-4">
+          About the Committee
+        </h2>
+        <p class="text-lg">{data.description}</p>
       </div>
     </div>
-    <div class="col-start-5 col-span-1 row-start-1 row-span-2"></div>
-    <div class="col-start-4 col-span-2 row-start-3 row-span-2"></div>
+    <div
+      class="col-start-4 col-span-2 row-start-1 row-span-6 flex flex-col rounded-2xl overflow-hidden"
+    >
+      <div class="flex-2 flex flex-col items-center p-4 relative">
+        <h2 class="text-4xl">Chairpersons</h2>
+        <Chair data={data.chairpersons[curr]} />
+        <div
+          class="flex w-full h-full flex-row justify-between items-center absolute *:shadow-xl *:shadow-black"
+        >
+          <button
+            class="w-12 h-12 rounded-full bg-(--text) text-(--bg1) transition-colors ml-4"
+            onclick={() =>
+              goTo(
+                (curr - 1 + data.chairpersons.length) %
+                  data.chairpersons.length,
+              )}
+          >
+            &lt;
+          </button>
+          <button
+            class="w-12 h-12 rounded-full bg-(--text) text-(--bg1) transition-colors mr-4"
+            onclick={() => goTo((curr + 1) % data.chairpersons.length)}
+          >
+            &gt;
+          </button>
+        </div>
+      </div>
+      <div class="flex-3 bg-red-500"></div>
+      <div class="flex-1 bg-blue-500"></div>
+    </div>
   </div>
 </section>

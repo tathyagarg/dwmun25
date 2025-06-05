@@ -2,11 +2,13 @@
   export let data;
 </script>
 
-<div class="h-full w-full">
+<div class="h-full w-[90%] flex flex-row">
   <div
-    class="h-[90%] bg-cover bg-center"
+    class="h-full max-w-[50%] flex-1 bg-cover bg-center"
     style="background-image: url({data.image})"
   ></div>
-  <h1 class="text-lg text-center">{data.name}</h1>
-  <p class="text-center">{data.role}</p>
+  <div class="flex-1 flex flex-col justify-center">
+    <h1 class="text-3xl text-center">{data.name}</h1>
+    <p class="text-2xl text-center">{data.role}</p>
+  </div>
 </div>
