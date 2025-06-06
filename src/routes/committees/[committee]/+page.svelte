@@ -1,116 +1,20 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import * as echarts from "echarts";
-  import world from "$lib/countries.geo.json";
-
   import Chair from "$lib/components/chair.svelte";
 
   let { data } = $props();
   let { committee, allos } = data;
 
-  let chart;
-
-  function lowerOpacity(hex: string, opacity: number): string {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-  }
-
-  onMount(() => {
-    // chart = echarts.init(document.getElementById("chart"));
-    // echarts.registerMap("world", world);
-    // const option = {
-    //   tooltip: {
-    //     trigger: "item",
-    //     formatter: (params) => {
-    //       const { name, data } = params;
-    //       if (data && data.status) {
-    //         if (data.info) {
-    //           return `<b>${name}</b> (${data.info})<br/>${data.status}`;
-    //         }
-    //         return `<b>${name}</b><br/>${data.status}`;
-    //       }
-    //       return;
-    //     },
-    //   },
-    //   visualMap: {
-    //     show: false,
-    //     min: 0,
-    //     max: 2,
-    //     inRange: {
-    //       color: ["black", "green", "red"],
-    //     },
-    //   },
-    //   series: [
-    //     {
-    //       type: "map",
-    //       map: "world",
-    //       roam: true,
-    //       emphasis: {
-    //         label: { show: false },
-    //         itemStyle: {
-    //           areaColor: lowerOpacity("#cccccc", 0.9),
-    //           opacity: 0.9,
-    //         },
-    //       },
-    //       itemStyle: {
-    //         normal: {
-    //           areaColor: "#cccccc",
-    //           borderColor: "#999999",
-    //         },
-    //       },
-    //       data: [
-    //         {
-    //           name: "United States of America",
-    //           value: 1,
-    //           info: "P5",
-    //           status: "Available",
-    //           emphasis: {
-    //             itemStyle: { areaColor: lowerOpacity("#00ff00", 0.9) },
-    //           },
-    //         },
-    //         {
-    //           name: "Canada",
-    //           value: 1,
-    //           status: "Available",
-    //           emphasis: {
-    //             itemStyle: { areaColor: lowerOpacity("#00ff00", 0.9) },
-    //           },
-    //         },
-    //         {
-    //           name: "China",
-    //           value: 2,
-    //           status: "Unavailable",
-    //           emphasis: {
-    //             itemStyle: { areaColor: lowerOpacity("#ff0000", 0.9) },
-    //           },
-    //         },
-    //         {
-    //           name: "Russia",
-    //           value: 2,
-    //           status: "Unavailable",
-    //           emphasis: {
-    //             itemStyle: { areaColor: lowerOpacity("#ff0000", 0.9) },
-    //           },
-    //         },
-    //       ],
-    //     },
-    //   ],
-    // };
-    // chart.setOption(option);
-  });
-
   let curr = $state(0);
+  let curr_other = $state(0);
 
   function goTo(index: number) {
     curr = index;
   }
-</script>
 
-<!--
-<div id="chart" style="width:100%; height:80vh; position:relative;"></div>
--->
+  function switchText() {
+    curr_other = (curr_other + 1) % 2;
+  }
+</script>
 
 <section class="w-screen h-screen">
   <div
@@ -123,18 +27,38 @@
         <img
           src={committee.logo}
           alt="Committee Logo"
-          class="w-[90%] h-[90%] m-[5%] object-cover rounded-tl-2xl opacity-10"
+          class="w-[90%] h-[90%] m-[5%] object-cover opacity-10"
         />
       </div>
       <div class="flex-2 flex flex-col items-center justify-center">
-        <h1 class="text-9xl m-4">{committee.name}</h1>
-        <p class="text-center text-2xl">{committee.agenda}</p>
+        <h1 class="m-4 text-[5em] lg:text-9xl">{committee.name}</h1>
+        <p class="text-center text-[1em]">{committee.agenda}</p>
       </div>
-      <div class="flex-1 flex flex-col items-center justify-start">
-        <h2 class="text-4xl w-full border-b-2 border-(--text) mb-4">
-          About the Committee
+      <div class="flex-1 flex flex-col items-center justify-start relative">
+        <h2 class="text-[2em] w-full border-b-2 border-(--text) mb-4">
+          {curr_other === 0 ? "About the Committee" : "Note"}
         </h2>
-        <p class="text-lg">{committee.description}</p>
+        <p class="text-[1em] whitespace-pre-line">
+          {curr_other === 0 ? committee.description : committee.note}
+        </p>
+        {#if committee.note}
+          <div
+            class="flex w-full h-full flex-row justify-between items-end absolute *:shadow-xl *:shadow-black"
+          >
+            <button
+              class="w-12 h-12 rounded-full bg-(--text) text-(--bg1) transition-colors"
+              onclick={() => switchText()}
+            >
+              &lt;
+            </button>
+            <button
+              class="w-12 h-12 rounded-full bg-(--text) text-(--bg1) transition-colors"
+              onclick={() => switchText()}
+            >
+              &gt;
+            </button>
+          </div>
+        {/if}
       </div>
     </div>
     <div
@@ -143,7 +67,7 @@
       <div
         class="flex-2 flex flex-col items-center p-4 relative border-b-2 border-(--text)"
       >
-        <h2 class="text-4xl">Chairpersons</h2>
+        <h2 class="text-[2em]">Chairpersons</h2>
         <Chair data={committee.chairpersons[curr]} />
         <div
           class="flex w-full h-full flex-row justify-between items-center absolute *:shadow-xl *:shadow-black"
@@ -172,11 +96,11 @@
             class="p-4 border-b-2 border-(--text) bg-green-900"
             class:bg-red-900={allo.filled}
           >
-            <h3 class="text-2xl font-black">{allo.alloc}</h3>
+            <h3 class="text-[1.5em] font-black">{allo.alloc}</h3>
             {#if allo.other}
-              <p class="text-lg">{allo.other}</p>
+              <p class="text-[.75em]">{allo.other}</p>
             {/if}
-            <p class="text-lg">{allo.filled ? "Filled" : "Available"}</p>
+            <p class="text-[1em]">{allo.filled ? "Filled" : "Available"}</p>
           </div>
         {/each}
       </div>
