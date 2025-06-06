@@ -1,7 +1,7 @@
   export type Committee = {
     name: string;
     agenda: string;
-    maps: string?;
+    maps?: string;
     img: string;
     logo: string;
     slug: string;
