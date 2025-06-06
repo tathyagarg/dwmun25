@@ -92,7 +92,7 @@
         },
         {
           name: "Aahil Khan",
-          image: "/images/chairs/ccc/aahil.jpg",
+          image: "/images/chairs/ccc/aahil.jpeg",
           role: "Moderator"
         }
       ],
