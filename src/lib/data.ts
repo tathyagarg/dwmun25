@@ -108,18 +108,18 @@
       description: "The Lok Sabha will deliberate on the critical issue of delimitation, the redrawing of boundaries for parliamentary and assembly constituencies based on demographic changes. This process, essential for ensuring fair representation and upholding democratic principles, involves constitutional, political, and regional sensitivities. The discussion will address whether delimitation should reflect current population data and how to manage regional imbalances in representation while preserving the federal structure and political equity across states.",
       chairpersons: [
         {
-          name: "Sanatan",
-          role: "",
-          image: "/images/chairs/lok-sabha/sanatan.jpeg",
-        },
-        {
-          name: "Shubh",
-          role: "",
+          name: "Shubh Bansal",
+          role: "Chairperson",
           image: "/images/chairs/lok-sabha/shubh.jpeg",
         },
         {
-          name: "Surya",
-          role: "",
+          name: "Sanatan Goyal",
+          role: "Vice Chairperson",
+          image: "/images/chairs/lok-sabha/sanatan.jpeg",
+        },
+        {
+          name: "Surya Reddy",
+          role: "Vice Chairperson",
           image: "/images/chairs/lok-sabha/surya.jpeg",
         }
       ],
