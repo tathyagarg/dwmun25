@@ -23,7 +23,6 @@
       />
     </a>
   </div>
-  <a href="/resources">Resources</a>
   <a href="/committees">Committees</a>
   <a href="/secretariat">Secretariat</a>
   <a href="/register">Register</a>
