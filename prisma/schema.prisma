@@ -1,0 +1,27 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Committee {
+  UNHRC
+  UNSC
+  CCC
+  IPC
+  LS
+  UNODC
+}
+
+model Allocation {
+  id        Int       @id @default(autoincrement())
+  alloc     String
+  committee Committee
+  other     String?
+  filled    Boolean   @default(false)
+
+  @@index([alloc, committee])
+}

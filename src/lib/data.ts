@@ -1,9 +1,13 @@
   export type Committee = {
     name: string;
     agenda: string;
+    maps: string?;
     img: string;
+    logo: string;
     slug: string;
-    description?: string; // Optional field for additional details
+    description?: string;
+    chairpersons: {name: string, image: string, role: string}[];
+    guide: string;
   }
 
   export const committees: Committee[] = [
@@ -22,11 +26,17 @@
           role: "Co-Chairperson",
         },
         {
+          name: "Ritobrata Sarkar",
+          image: "/images/chairs/unhrc/rito.jpeg",
+          role: "Co-Chairperson",
+        },
+        {
           name: "Shloke Jaitly",
           image: "/images/chairs/unhrc/shloke.jpg",
           role: "Moderator",
         }
-      ]
+      ],
+      guide: "unhrc.pdf"
     },
     {
       name: "UNSC",
@@ -52,7 +62,8 @@
           image: "/images/chairs/unsc/arnav.jpeg",
           role: "Moderator"
         }
-      ]
+      ],
+      guide: "unsc.pdf"
     },
     {
       name: "CCC",
@@ -82,15 +93,35 @@
           image: "/images/chairs/ccc/aahil.jpg",
           role: "Moderator"
         }
-      ]
+      ],
+      guide: "ccc.pdf"
     },
     {
       name: "Lok Sabha",
+      maps: "LS",
       agenda: "Deliberation on the Delimitation of Parliamentary and Assembly Constituencies.",
       img: "/images/bgs/lok-sabha.jpeg",
       logo: "/images/logos/LS.png",
       slug: "lok-sabha",
       description: "The Lok Sabha will deliberate on the critical issue of delimitation, the redrawing of boundaries for parliamentary and assembly constituencies based on demographic changes. This process, essential for ensuring fair representation and upholding democratic principles, involves constitutional, political, and regional sensitivities. The discussion will address whether delimitation should reflect current population data and how to manage regional imbalances in representation while preserving the federal structure and political equity across states.",
+      chairpersons: [
+        {
+          name: "Sanatan",
+          role: "",
+          image: "/images/chairs/lok-sabha/sanatan.jpeg",
+        },
+        {
+          name: "Shubh",
+          role: "",
+          image: "/images/chairs/lok-sabha/shubh.jpeg",
+        },
+        {
+          name: "Surya",
+          role: "",
+          image: "/images/chairs/lok-sabha/surya.jpeg",
+        }
+      ],
+      guide: "lok-sabha.pdf"
     },
     {
       name: "UNODC",
@@ -116,7 +147,8 @@
           image: "/images/chairs/unodc/leena.jpeg",
           role: "Moderator"
         }
-      ]
+      ],
+      guide: "unodc.pdf"
     },
     {
       name: "IPC",
@@ -142,7 +174,8 @@
           image: "/images/chairs/ipc/kapishnu.jpeg",
           role: "Moderator"
         }
-      ]
+      ],
+      guide: "ipc.pdf"
     },
   ];
   
