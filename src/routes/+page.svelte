@@ -176,6 +176,40 @@
     </div>
   </div>
 </section>
+<section style="height: fit-content; padding: 2.5em; box-sizing: border-box;">
+  <h1 class="[font-size:clamp(1.5em,4vw,4em)]">Letter from Principal</h1>
+  <div
+    class="flex flex-col h-fit gap-2 py-8 border-box text-2xl/8 portrait:px-0 portrait:text-sm portrait:*:m-0"
+  >
+    <i class="mt-4">
+      We are happy to invite you to the 7th edition of our Model United Nations
+      Conference (DWMUN 2025) to be held from Thursday 31st July to Saturday 2nd
+      August. MUN is a platform where young minds become global leaders. It is
+      not just a simulation of a diplomatic arena—DWMUN is a transformative
+      experience. It empowers students to think critically, speak confidently,
+      negotiate thoughtfully, and understand global issues from diverse
+      perspectives. It’s one of the best platforms to build leadership,
+      diplomacy and problem-solving skills that last a lifetime.
+    </i>
+    <i class="mt-4">
+      In a world grappling with geopolitical tensions, economic uncertainty,
+      climate change and humanitarian crises, the need for informed, empathetic
+      and solution- driven dialogue has never been greater.
+    </i>
+    <i class="mt-4">
+      Join us as delegates, debate real -world issues, craft resolutions and
+      collaborate across cultures to shape a better tomorrow. Whether you are a
+      seasoned MUNer, or first timer, this is your moment to make a difference
+      and your chance to shine.
+    </i>
+    <i class="mt-4">
+      My best wishes to all the young delegates as they take on this exciting
+      challenge. May your voices be strong, your ideas bold and your diplomacy
+      impactful!
+    </i>
+    <i class="mt-4"> Mrs. Lovely Dutta Prusty </i>
+  </div>
+</section>
 
 <style>
   .marquee {
