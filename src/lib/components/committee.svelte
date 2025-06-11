@@ -13,8 +13,8 @@
     <div
       class="flex flex-col w-[75%] h-full justify-center items-center text-center text-(--text) z-10"
     >
-      <h1 class="text-9xl mb-12">{data.name}</h1>
-      <p class="text-3xl whitespace-pre-line">{data.agenda}</p>
+      <h1 class="text-9xl mb-12 portrait:text-3xl">{data.name}</h1>
+      <p class="text-3xl whitespace-pre-line portrait:text-sm">{data.agenda}</p>
     </div>
   </div>
 </a>

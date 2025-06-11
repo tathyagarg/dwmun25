@@ -96,7 +96,6 @@
     <div id="buttons" class="[font-size:clamp(.5em,3vw,1.5em)]">
       <a href="/register" class="animate-bounce">Register</a>
       <a href="/committees">Committees</a>
-      <img src="/images/rotary.png" alt="logo" class="h-[2.5em]" />
     </div>
     <div id="countdown">
       <h2 id="days">00</h2>
@@ -128,7 +127,9 @@
 </section>
 <section style="height: fit-content">
   <div class="flex flex-col h-fit p-[2.5em] box-border">
-    <h1 class="[font-size:clamp(1.5em,4vw,4em)]">Letter from the OC</h1>
+    <h1 class="[font-size:clamp(1.5em,4vw,4em)]">
+      Letter from the Secretary General
+    </h1>
     <br />
     <div class="flex flex-row my-8 portrait:flex-col">
       <div

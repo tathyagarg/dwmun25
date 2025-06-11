@@ -12,7 +12,7 @@
 
 <nav
   class="flex flex-row items-center gap-[4em] w-full px-[2.5em] py-[1em] box-border
-  z-10 portrait:gap-[2em] portrait:px-[1em]"
+  z-10 portrait:gap-[1em] portrait:px-[1em]"
 >
   <div>
     <a href="/" class="h-fit w-fit">
@@ -26,6 +26,9 @@
   <a href="/committees">Committees</a>
   <a href="/secretariat">Secretariat</a>
   <a href="/register">Register</a>
+  <a href="https://rcb1934.in/"
+    ><img src="/images/rotary.png" alt="logo" class="h-[3em]" /></a
+  >
 </nav>
 
 <div>

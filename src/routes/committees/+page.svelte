@@ -79,12 +79,14 @@
   });
 </script>
 
-<div class="flex justify-center items-center mb-8 text-2xl">
+<div
+  class="flex justify-center items-center mb-8 text-2xl portrait:text-[0.6rem]"
+>
   {#each committees as committee, index (committee)}
     <button
       on:click={() => goTo(index)}
       class:border-r-2={index != 5}
-      class="border-(--text) px-5 hover:text-white duration-250 transition-color cursor-pointer"
+      class="border-(--text) px-5 portrait:px-2 hover:text-white duration-250 transition-color cursor-pointer"
     >
       {committee.name}
     </button>

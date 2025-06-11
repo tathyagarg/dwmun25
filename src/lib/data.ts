@@ -199,12 +199,12 @@
     },
     {
       name: "Ipshita Basu",
-      role: "Head of Design",
+      role: "Head of Design (Printing)",
       image: "/images/secretariat/ipshita.png",
     },
     {
       name: "Advika Gupta",
-      role: "Head of Design",
+      role: "Head of Design (Digital)",
       image: "/images/secretariat/advika.png",
     },
     {
