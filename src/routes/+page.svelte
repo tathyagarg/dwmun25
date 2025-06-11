@@ -98,7 +98,7 @@
       <a href="/committees">Committees</a>
     </div>
     <div id="countdown">
-      <h2 id="days">00</h2>
+      <h2 id="days">10</h2>
       <h2 id="hours">00</h2>
       <h2 id="minutes">00</h2>
       <h2 id="seconds">00</h2>
