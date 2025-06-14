@@ -183,7 +183,7 @@ export const committees: Committee[] = [
 
 export const people = [
   {
-    name: "Chirantana Hedge",
+    name: "Chirantana Hegde",
     role: "Secretary General",
     image: "/images/secretariat/chirantana.png",
   },
