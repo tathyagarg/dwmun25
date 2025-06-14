@@ -27,7 +27,7 @@ export const committees: Committee[] = [
         role: "Co-Chairperson",
       },
       {
-        name: "Ritobrata Sarkar",
+        name: "Rito Sarkar",
         image: "/images/chairs/unhrc/rito.jpeg",
         role: "Co-Chairperson",
       },
