@@ -34,7 +34,9 @@
       </div>
       <div class="flex-2 flex flex-col items-center justify-center">
         <h1 class="m-4 portrait:text-5xl lg:text-9xl">{committee.name}</h1>
-        <p class="text-center text-[1em] portrait:text-[0.5em]">
+        <p
+          class="text-center text-[1em] portrait:text-[0.5em] whitespace-pre-line"
+        >
           {committee.agenda}
         </p>
       </div>
@@ -49,7 +51,7 @@
         </p>
         {#if committee.note}
           <div
-            class="flex w-full h-full flex-row justify-between items-end absolute *:shadow-xl *:shadow-black"
+            class="flex w-full h-full flex-row justify-between items-end *:shadow-xl *:shadow-black"
           >
             <button
               class="w-12 h-12 rounded-full bg-(--text) text-(--bg1) transition-colors"

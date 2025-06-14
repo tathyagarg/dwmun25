@@ -69,7 +69,7 @@
     },
     {
       name: "CCC",
-      agenda: "Crisis Management: De-escalating the 2025 India-Pakistan Conflict Post-Pahalgam Attack",
+      agenda: "Evaluating regional security in the wake of the tensions at Pahalgam, with a special reference on Indo-Pakistani relations and the growing threat of cross-border terrorism.\n\nFreeze Date: 6th May, 2025",
       img: "/images/bgs/ccc.jpeg",
       logo: "/images/logos/CCC.png",
       slug: "ccc",
