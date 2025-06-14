@@ -164,8 +164,8 @@
           DWMUN’25.
         </i>
         <i class="ml-4 mt-4">
-          Warm regards,<br />Secretary General<br />DWMUN’25<br />Delhi Public
-          School, Whitefield
+          Warm regards,<br />Chirantana Hegde<br />Secretary General<br
+          />DWMUN’25<br />Delhi Public School, Whitefield
         </i>
       </div>
       <div
