@@ -258,12 +258,47 @@ const lists = {
     { alloc: "Ukraine", other: "" },
     { alloc: "Greece", other: "" },
     { alloc: "Slovenia", other: "" },
+  ],
+  CCC: [
+    { alloc: 'Narendra Modi', other: 'Indian Prime Minister' },
+    { alloc: 'Rajnath Singh', other: 'Indian Defence Minister' },
+    { alloc: 'Amit Shah', other: 'Indian Home Minister' },
+    { alloc: 'S. Jaishankar', other: 'Indian External Affairs Minister' },
+    { alloc: 'Omar Abdullah', other: 'Indian Chief Minister of J&K' },
+    { alloc: 'Ajit Doval', other: 'Indian National Security Advisor' },
+    { alloc: 'General Anil Chauhan', other: 'Indian Chief of Defence Staff' },
+    { alloc: 'General Upendra Dwivedi', other: 'Indian Chief of Army Staff' },
+    { alloc: 'Admiral Dinesh Kumar Tripathi', other: 'Indian Chief of Naval Staff' },
+    { alloc: 'Air Chief Marshal Amar Preet Singh', other: 'Indian Chief of Air Staff' },
+    { alloc: 'Tapan Kumar Deka', other: 'Indian IB Chief' },
+    { alloc: 'Lt. Gen. R.S. Raman', other: 'Indian Director General Military Intelligence' },
+    { alloc: 'Lt. Gen. Dwivedi', other: 'Indian "GOC-in-C, Northern Command"' },
+    { alloc: 'Lt. Gen. Rakesh Kapoor', other: 'Indian Western Command' },
+    { alloc: 'Lt. Gen. H.S. Sahi', other: 'Indian XV Corps Commander (Kashmir)' },
+    { alloc: 'Lt. Gen. Navin Sachdeva', other: 'Indian XVI Corps Commander (Jammu)' },
+    { alloc: 'Shehbaz Sharif', other: 'Pakistani Prime Minister' },
+    { alloc: 'Khawaja Asif', other: 'Pakistani Defence Minister' },
+    { alloc: 'Rana Sanaullah', other: 'Pakistani Interior Minister' },
+    { alloc: 'Ishaq Dar', other: 'Pakistani Foreign Minister' },
+    { alloc: 'General Asim Munir', other: 'Pakistani Chief of Army Staff' },
+    { alloc: 'Vice Admiral Naveed Ashraf', other: 'Pakistani Chief of Naval Staff' },
+    { alloc: 'Air Chief Marshal Zaheer Ahmed Babar Sidhu', other: 'Pakistani Chief of Air Staff' },
+    { alloc: 'General Sahir Shamshad Mirza', other: 'Pakistani Chairman Joint Chiefs of Staff Committee' },
+    { alloc: 'Lt. Gen. Muhammad Asim Malik', other: 'Pakistani "Director General, ISI; National Security Advisor"' },
+    { alloc: 'Lt. Gen. Syed Aamer Raza', other: 'Pakistani Chief of General Staff' },
+    { alloc: 'Lt. Gen. Ayman Bilal Safdar', other: 'Pakistani "Commander X Corps, Rawalpindi"' },
+    { alloc: 'Lt. Gen. Nauman Zakaria', other: 'Pakistani "Commander IV Corps, Lahore"' },
+    { alloc: 'Lt. Gen. Muhammad Waseem Ashraf', other: 'Pakistani Military Intelligence Chief' },
+    { alloc: 'Anwaar-ul-Haq Kakar', other: 'Pakistani National Security Advisor' },
+    { alloc: 'Fuad Asadullah Khan', other: 'Pakistani Director General of IB' },
   ]
 }
 
-const seedData: Prisma.AllocationCreateInput[] = Object.entries(lists).flatMap(([committee, countries]) => 
-  countries.map((country) => ({...country, committee: committee}))
-)
+const seedData: Prisma.AllocationCreateInput[] = Object.entries(lists)
+  .filter(([committee, _]) => committee === 'CCC')
+  .flatMap(([committee, countries]) =>
+    countries.map((country) => ({ ...country, committee: committee } as Prisma.AllocationCreateInput))
+  );
 
 console.log(seedData);
 
