@@ -27,8 +27,8 @@ export const committees: Committee[] = [
         role: "Co-Chairperson",
       },
       {
-        name: "Rito Sarkar",
-        image: "/images/chairs/unhrc/rito.jpeg",
+        name: "Aabid Maldar",
+        image: "/images/chairs/ccc/aabid.webp",
         role: "Co-Chairperson",
       },
       {
@@ -83,12 +83,12 @@ export const committees: Committee[] = [
       {
         name: "Avyan Eklavya Singh",
         image: "/images/chairs/ccc/avyan.jpg",
-        role: "Co-Chairperson"
+        role: "Vice Chairperson"
       },
       {
-        name: "Aabid Maldar",
-        image: "/images/chairs/ccc/aabid.webp",
-        role: "Crisis Director"
+        name: "Rito Sarkar",
+        image: "/images/chairs/unhrc/rito.jpeg",
+        role: "Crisis Director",
       },
       {
         name: "Arnav Yadav",
