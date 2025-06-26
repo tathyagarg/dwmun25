@@ -5,7 +5,7 @@
 </script>
 
 <div
-  class="w-1/4 aspect-square rounded-lg border-2 border-(--bg1) bg-(--bg1)/20 backdrop-blur-2xl"
+  class="w-1/4 portrait:w-1/2 aspect-square rounded-lg border-2 border-(--bg1) bg-(--bg1)/20 backdrop-blur-2xl"
 >
   <a
     class="flex flex-col items-center justify-center text-center w-full h-full py-2"
