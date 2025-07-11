@@ -159,7 +159,7 @@ export const committees: Committee[] = [
     img: "/images/bgs/ipc.jpeg",
     logo: "/images/logos/IPC.png",
     slug: "ipc",
-    description: "The Indian Press Corps will debate the evolving role of social media as a primary source of news and information in modern society. While platforms like X (formerly Twitter), Instagram, and YouTube democratize content creation and provide real-time updates, they also contribute to misinformation, echo chambers, and declining trust in traditional journalism. The discussion will explore how social media is reshaping public discourse, the responsibilities of digital influencers, and the need for regulatory mechanisms to ensure the credibility and ethical dissemination of information.",
+    description: "The International Press Corps will debate the evolving role of social media as a primary source of news and information in modern society. While platforms like X (formerly Twitter), Instagram, and YouTube democratize content creation and provide real-time updates, they also contribute to misinformation, echo chambers, and declining trust in traditional journalism. The discussion will explore how social media is reshaping public discourse, the responsibilities of digital influencers, and the need for regulatory mechanisms to ensure the credibility and ethical dissemination of information.",
     chairpersons: [
       {
         name: "Tannmay Kumar Baid",
