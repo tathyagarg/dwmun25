@@ -14,6 +14,30 @@
   function switchText() {
     curr_other = (curr_other + 1) % 2;
   }
+
+  let p1_heading = "";
+  let p2_heading = "";
+
+  let p1_allos: any[] | null = null;
+  let p2_allos: any[] = [];
+
+  if (committee.name === "CCC") {
+    let pakistan_pm_idx = 0;
+    for (let i = 0; i < allos.length; i++) {
+      if (allos[i].alloc === "Shehbaz Sharif") {
+        pakistan_pm_idx = i;
+        break;
+      }
+    }
+
+    p1_heading = "Indian Cabinet";
+    p2_heading = "Pakistan Cabinet";
+
+    p1_allos = allos.slice(0, pakistan_pm_idx);
+    p2_allos = allos.slice(pakistan_pm_idx);
+  }
+
+  console.log(p1_allos, p2_allos, allos);
 </script>
 
 <section class="w-screen h-screen portrait:h-fit">
@@ -98,7 +122,14 @@
         </div>
       </div>
       <div class="flex-3 portrait:flex-2 bg-(--bg1) overflow-y-scroll">
-        {#each allos as allo}
+        {#if p1_heading}
+          <div class="p-4 border-b-2 border-(--text) bg-blue-900">
+            <h2 class="text-[1.5em] portrait:text-lg font-black">
+              {p1_heading}
+            </h2>
+          </div>
+        {/if}
+        {#each p1_allos ?? allos as allo}
           <div
             class="p-4 border-b-2 border-(--text) bg-green-900"
             class:bg-red-900={allo.filled}
@@ -114,6 +145,29 @@
             </p>
           </div>
         {/each}
+        {#if p2_heading}
+          <div class="p-4 border-b-2 border-(--text) bg-blue-900">
+            <h2 class="text-[1.5em] portrait:text-lg font-black">
+              {p2_heading}
+            </h2>
+          </div>
+          {#each p2_allos as allo}
+            <div
+              class="p-4 border-b-2 border-(--text) bg-green-900"
+              class:bg-red-900={allo.filled}
+            >
+              <h3 class="text-[1.5em] portrait:text-lg font-black">
+                {allo.alloc}
+              </h3>
+              {#if allo.other}
+                <p class="text-[.75em]">{allo.other}</p>
+              {/if}
+              <p class="text-[1em] portrait:text-sm">
+                {allo.filled ? "Filled" : "Available"}
+              </p>
+            </div>
+          {/each}
+        {/if}
       </div>
       <div class="flex-1 bg-(--bg1)">
         <a
