@@ -96,7 +96,7 @@ export const committees: Committee[] = [
         role: "Moderator"
       }
     ],
-    guide: "/bgs/CCC.pdf",
+    guide: "/committees/ccc"
   },
   {
     name: "Lok Sabha",
