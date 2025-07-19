@@ -12,6 +12,9 @@ export const load: PageLoad = async ({ params }) => {
         },
         include: {
           committee: false,
+        },
+        orderBy: {
+          id: 'asc',
         }
       });
 
