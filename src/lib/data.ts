@@ -86,8 +86,8 @@ export const committees: Committee[] = [
         role: "Vice Chairperson"
       },
       {
-        name: "Rito Sarkar",
-        image: "/images/chairs/unhrc/rito.jpeg",
+        name: "Shubh Bansal",
+        image: "/images/chairs/ccc/shubh.jpeg",
         role: "Crisis Director",
       },
       {
@@ -108,9 +108,9 @@ export const committees: Committee[] = [
     description: "The Lok Sabha will deliberate on the critical issue of delimitation, the redrawing of boundaries for parliamentary and assembly constituencies based on demographic changes. This process, essential for ensuring fair representation and upholding democratic principles, involves constitutional, political, and regional sensitivities. The discussion will address whether delimitation should reflect current population data and how to manage regional imbalances in representation while preserving the federal structure and political equity across states.",
     chairpersons: [
       {
-        name: "Shubh Bansal",
+        name: "Shrikar PN",
         role: "Chairperson",
-        image: "/images/chairs/lok-sabha/shubh.jpeg",
+        image: "/images/chairs/lok-sabha/shrikar.jpeg",
       },
       {
         name: "Sanatan Goyal",
@@ -162,8 +162,8 @@ export const committees: Committee[] = [
     description: "The International Press Corps will debate the evolving role of social media as a primary source of news and information in modern society. While platforms like X (formerly Twitter), Instagram, and YouTube democratize content creation and provide real-time updates, they also contribute to misinformation, echo chambers, and declining trust in traditional journalism. The discussion will explore how social media is reshaping public discourse, the responsibilities of digital influencers, and the need for regulatory mechanisms to ensure the credibility and ethical dissemination of information.",
     chairpersons: [
       {
-        name: "Tannmay Kumar Baid",
-        image: "/images/chairs/ipc/tannmay.jpeg",
+        name: "Alfred Thomas",
+        image: "/images/chairs/ipc/alfred.jpeg",
         role: "Chairperson"
       },
       {
