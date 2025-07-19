@@ -177,7 +177,6 @@
           <h1 class="text-5xl portrait:text-3xl text-center">
             Background Guide
           </h1>
-          <h2>(Coming Soon!)</h2>
         </a>
       </div>
     </div>

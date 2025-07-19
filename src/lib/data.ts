@@ -37,7 +37,7 @@ export const committees: Committee[] = [
         role: "Moderator",
       }
     ],
-    guide: "unhrc.pdf"
+    guide: "/bgs/UNHRC.pdf"
   },
   {
     name: "UNSC",
@@ -64,7 +64,7 @@ export const committees: Committee[] = [
         role: "Moderator"
       }
     ],
-    guide: "unsc.pdf",
+    guide: "/bgs/UNSC.pdf",
     note: "Observer status Nations will not be allowed to participate in Substantive Voting procedure I.e. voting on the Draft Resolution and their amendments. However they may be allowed to sponsor resolutions if they are able to avail sponsorship rights from a permanent or non-permanent member (proxy sponsorship)\n\nHowever, during the rest of committee time, they will be allowed full participation during committee debate and procedural voting"
   },
   {
@@ -96,7 +96,7 @@ export const committees: Committee[] = [
         role: "Moderator"
       }
     ],
-    guide: "ccc.pdf"
+    guide: "/bgs/CCC.pdf",
   },
   {
     name: "Lok Sabha",
@@ -123,7 +123,7 @@ export const committees: Committee[] = [
         image: "/images/chairs/lok-sabha/surya.jpeg",
       }
     ],
-    guide: "lok-sabha.pdf"
+    guide: "/bgs/LS.pdf"
   },
   {
     name: "UNODC",
@@ -150,7 +150,7 @@ export const committees: Committee[] = [
         role: "Moderator"
       }
     ],
-    guide: "unodc.pdf"
+    guide: "/bgs/UNODC.pdf"
   },
   {
     name: "IPC",
@@ -177,7 +177,7 @@ export const committees: Committee[] = [
         role: "Moderator"
       }
     ],
-    guide: "ipc.pdf"
+    guide: "/committees/ipc"
   },
 ];
 
