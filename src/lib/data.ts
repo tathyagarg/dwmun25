@@ -177,8 +177,7 @@ export const committees: Committee[] = [
         role: "Moderator"
       }
     ],
-    guide: "/committees/ipc",
-    note: "No background guide will be provided for this committee."
+    guide: "/bgs/IPC.pdf",
   },
 ];
 
